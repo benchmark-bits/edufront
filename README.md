@@ -15,5 +15,5 @@ cd edufront<br/>
 npm install<br/>
 
 <h2> Start Application </h2>
-ng serve
+ng serve<br/>
 npx json-server-auth db.json  (in another terminal to run fake json server)
