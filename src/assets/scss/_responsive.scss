@@ -1,0 +1,52 @@
+/*responsive css */
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .form-wrapper {
+      form {
+        width: 100%;
+      }
+      .password-rules {
+        display: none;
+        position: relative;
+        left: 1.5rem;
+        top: 1rem;
+      }
+      .account-created  {
+        width: 100%;
+        .btn {
+          margin: 0 0.5rem;
+        }
+        .success-icon {
+          margin-top: 3rem;
+        }
+      }
+      &.profile-wrapper {
+        .profile-steps {
+          width: 100%;
+          margin-bottom: 5rem;
+        }
+      }
+    }
+
+    .profile-upload {
+      width: 100%;
+    }
+
+/*buttons responsive css here*/
+
+.btn {
+  min-width: 150px;
+}
+
+.mt-x-0  {
+  margin-top: 0!important;
+}
+.pt-x-0 {
+  padding-top: 0!important;
+}
+
+}

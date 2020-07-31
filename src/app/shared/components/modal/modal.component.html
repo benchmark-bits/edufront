@@ -1,0 +1,14 @@
+<div *ngIf="showModal" class="custom-modal-overlay">
+  <div class="custom-modal">
+    <div class="custom-modal-header">
+      <h3>{{modalTitle}}</h3>
+      <a class="close" (click)="closeModal()">×</a>
+    </div>
+    <div class="custom-modal-content" [innerHtml]="modalContent">
+    </div>
+    <div class="custom-modal-footer">
+      <button type="button" class="btn btn-outline btn-outline-secondary"
+        (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>

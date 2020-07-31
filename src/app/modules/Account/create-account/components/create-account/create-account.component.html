@@ -1,0 +1,99 @@
+<div class="form-wrapper">
+  <!--ACCOUNT CREATION FORM-->
+  <div class="logo">
+    <img src="assets/img/logo.jpg" alt="logo">
+  </div>
+  <div *ngIf="!isAuthenticated">
+    <h1 class="text-center mb-3">Create New Account</h1>
+    <p class="text-center pb-4 mb-5">Already have an account? <a href="javascript:void(0)"
+        [routerLink]="['/login']">Sign In</a></p>
+    <form [formGroup]="registerForm" novalidate (ngSubmit)="submit()">
+      <div class="form-group has-float-label field-with-icon">
+        <input class="form-control" type="text" id="email" appEmailChecker placeholder="Email Address"
+          formControlName="email">
+        <label for="email">Email Address</label>
+        <i *ngIf="registerForm.controls['email'].valid" class="icon-check text-success user-valid"></i>
+        <div id="emailTaken" class="error-msg" *ngIf="validationMessage">
+          <ul class="password-rules">
+            <li *ngFor="let rule of validationMessage['email-exists'] | keyvalue">{{rule.value}}</li>
+          </ul>
+        </div>
+        <div
+          *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
+          class="error-msg">
+          <div *ngIf="registerForm.controls['email'].errors.required">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['email-required'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </div>
+          <div *ngIf="registerForm.controls['email'].errors?.pattern">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['email-pattern'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-group has-float-label field-with-icon position-relative">
+        <input class="form-control" [type]="hidePassword ? 'password' : 'text'" id="password" placeholder="Password"
+          formControlName="password">
+        <label for="password">Password</label>
+        <i (click)="hidePassword = !hidePassword" class="pointer"
+          [ngClass]="hidePassword ? 'icon-eye-off' : 'icon-eye'"></i>
+        <div
+          *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)"
+          class="error-msg">
+          <span *ngIf="registerForm.controls['password'].errors.required">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['password-required'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+          <span *ngIf="registerForm.controls['password'].errors?.pattern">
+            <ul class="password-rules rules-list">
+              <li *ngFor="let rule of validationMessage['password-pattern'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+      <div class="form-group has-float-label field-with-icon">
+        <input class="form-control" [type]="hideConfirmPassword ? 'password' : 'text'" id="confirmPassword"
+          placeholder="Confirm Password" formControlName="confirmPassword"
+          [ngClass]="{'passwordNotSame': registerForm.hasError('passwordNotSame')}">
+        <label for="confirmPassword">Confirm Password</label>
+        <i (click)="hideConfirmPassword = !hideConfirmPassword" class="pointer"
+          [ngClass]="hideConfirmPassword ? 'icon-eye-off' : 'icon-eye'"></i>
+        <div
+          *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)"
+          class="error-msg">
+          <span *ngIf="registerForm.controls['confirmPassword'].errors.required">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['confirm-password-required'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+        </div>
+        <div class="error-msg" *ngIf="registerForm.hasError('passwordNotSame')">
+          <ul class="password-rules">
+            <li *ngFor="let rule of validationMessage['password-mismatch'] | keyvalue">{{rule.value}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex mb-5">
+        <button type="submit" class="btn btn-lg btn-primary w-100">CREATE ACCOUNT</button>
+      </div>
+    </form>
+
+    <p class="text-center">By signing up, you agree to our
+      <a href="javascript:void(0)" (click)="openTermsOfServicesModal()">Terms of Services</a> and
+      <a href="javascript:void(0)" (click)="openPrivacyPolicyModal()">Privacy Policy.</a></p>
+  </div>
+</div>
+
+<!-- TERMS-OF-SERVICES-MODAL-WINDOW -->
+<app-modal [modalContent]="termsOfServices" [modalTitle]="termsOfServicesTitle"
+           [showModal]="termsOfServicesModal"></app-modal>
+<!-- TERMS-OF-SERVICES-MODAL-WINDOW END -->
+
+
+<!-- PRIVACY-POLICY-MODAL-WINDOW -->
+<app-modal [modalContent]="privacyPolicy" [modalTitle]="privacyPolicyTitle"
+           [showModal]="privacyPolicyModal"></app-modal>
+<!-- PRIVACY-POLICY-MODAL-WINDOW-END-->

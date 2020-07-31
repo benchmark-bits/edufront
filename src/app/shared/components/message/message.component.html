@@ -1,0 +1,7 @@
+<div *ngIf="isAlert || message" class="mb-0 mt-3">
+    <div class="alert alert-{{type}}" role="alert" *ngIf="isAlert || message">{{ message }}
+      <button type="button" class="close" (click)="isAlert = null; message = null" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>

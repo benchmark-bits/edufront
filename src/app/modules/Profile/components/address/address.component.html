@@ -1,0 +1,64 @@
+<div class="form-wrapper profile-wrapper">
+  <div class="logo">
+    <img src="assets/img/logo.jpg" alt="logo">
+  </div>
+  <h1 class="text-center mb-5">Set Up Your Profile</h1>
+  <!--STEPS START-->
+  <ul class="profile-steps">
+    <li class="profile-steps-item completed">
+      Bio Details
+    </li>
+    <li class="profile-steps-item completed">
+      Profile Picture
+    </li>
+    <li class="profile-steps-item active">
+      Address
+    </li>
+    <li class="profile-steps-item">
+      Security
+     </li>
+  </ul>
+  <!--STEPS END-->
+  <div class="w-100 float-left mb-5">
+    <form>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="address" placeholder="Address">
+        <label for="address">Address</label>
+      </div>
+      <div class="form-group">
+        <span class="plain-select">
+            <select class="form-control">
+                <option value="" selected>Country</option>
+                <option>India</option>
+                <option>France</option>
+                <option>USA</option>
+                <option>Japan</option>
+            </select>
+        </span>
+    </div>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="zipcode" placeholder="Zip Code">
+        <label for="zipcode">Zip Code</label>
+      </div>
+      <div class="form-group">
+        <span class="plain-select">
+            <select class="form-control">
+                <option value="" selected>State</option>
+                <option>Delhi</option>
+                <option>Maharshtra</option>
+                <option>Bihar</option>
+                <option>Hariyana</option>
+            </select>
+        </span>
+    </div>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="city" placeholder="City">
+        <label for="city">City</label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-lg btn-primary w-100" [routerLink]="['/setup-profile/security']">Next</a>
+      </div>
+    </form>
+  </div>
+</div>
+

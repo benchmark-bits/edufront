@@ -1,0 +1,175 @@
+/* form style */
+
+.form-group {
+  margin-bottom: 4rem;
+}
+
+.error-msg {
+  color: $danger;
+  line-height: 2;
+  font-size: 1.4rem;
+}
+
+.form-control {
+  &:read-only::placeholder {
+    color: $gray-color;
+  }
+  border: 0;
+  border-bottom: 0.0625rem solid $gray-color;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 5px;
+  height: calc(3.5rem + 0px + 0px);
+  font-weight: 500;
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  &[readonly] {
+    opacity: 0.7;
+  }
+  &.ng-invalid {
+    border-color: $danger !important;
+  }
+  &.ng-touched {
+    border-color: $danger !important;
+    &.ng-valid {
+      border-color: $success !important;
+    }
+  }
+}
+
+.form-control.ng-invalid.ng-untouched.ng-pristine {
+  border-color: $gray-color!important;
+}
+
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5 !important;
+}
+
+/* floating-labels css */
+.has-float-label {
+  position: relative;
+  .form-control {
+    padding-bottom: 1.2rem;
+  }
+  label {
+    position: absolute;
+    left: 0;
+    top: -2.5rem;
+    font-size: 1.3rem;
+    cursor: text;
+    opacity: 1;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .form-control::-webkit-input-placeholder {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .form-control::-moz-placeholder {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .form-control:-ms-input-placeholder {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .form-control::placeholder {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+  .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+    opacity: 0;
+  }
+  .form-control:placeholder-shown:not(:focus)::-moz-placeholder {
+    opacity: 0;
+  }
+  .form-control:placeholder-shown:not(:focus) + * {
+    font-size: 1.6rem;
+    top: 0;
+  }
+
+  /*when you want to add icon for field at start just add this "field-with-icon" class with "has-float-label" this class*/
+
+  &.field-with-icon {
+    i {
+      position: absolute;
+      right: 0;
+      top: 0.3rem;
+      font-size: 1.8rem;
+      color: $text-color;
+
+    }
+    .user-valid {
+      font-size: 1.3rem;
+      border: 1px solid $success;
+      border-radius: 50%;
+      padding: 2px;
+    }
+
+    .form-control {
+      padding-right: 1.675rem;
+    }
+  }
+}
+
+.has-float-label {
+  input.form-control:-webkit-autofill ~ label {
+    top: -1rem;
+    line-height: 1.07142857;
+  }
+}
+
+
+.plain-select {
+  display: block;
+  position: relative;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+    padding-right: 2rem;
+    border-radius: 0;
+    padding-left: 0px;
+    option {
+      font-size: 1.5rem;
+    }
+    &.form-control {
+      padding-bottom: 1.2rem;
+    line-height: 1;
+    }
+  }
+
+  &:after {
+    font-family: 'icomoon' !important;
+    content: "\e908";
+    position: absolute;
+    z-index: 2;
+    right: 19px;
+    top: -5px;
+    margin-top: 0px;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    font-size: 2rem;
+  }
+
+  .select-label {
+    color: $text-color;
+    font-size: 0.8125rem;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:0px;
+    top:-1.25rem;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+}

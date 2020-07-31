@@ -1,0 +1,45 @@
+<div class="form-wrapper profile-wrapper">
+  <div class="logo">
+    <img src="assets/img/logo.jpg" alt="logo">
+  </div>
+  <h1 class="text-center mb-5">Set Up Your Profile</h1>
+  <!--STEPS START-->
+  <ul class="profile-steps">
+    <li class="profile-steps-item active">
+      Bio Details
+    </li>
+    <li class="profile-steps-item">
+      Profile Picture
+    </li>
+    <li class="profile-steps-item">
+      Address
+    </li>
+    <li class="profile-steps-item">
+     Security
+    </li>
+  </ul>
+  <!--STEPS END-->
+  <div class="w-100 float-left mb-5">
+    <form>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="firstname" placeholder="First Name">
+        <label for="firstname">First Name</label>
+      </div>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="lastname" placeholder="Last Name">
+        <label for="lastname">Last Name</label>
+      </div>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="phonenumber" placeholder="Phone Number">
+        <label for="phonenumber">Phone Number</label>
+      </div>
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="screenname" placeholder="Screen Name">
+        <label for="screenname">Screen Name (Optional)</label>
+      </div>
+      <div class="d-flex justify-content-center pt-5">
+        <a class="btn btn-lg btn-primary w-100" [routerLink]="['/setup-profile/profile-picture']">Next</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,343 @@
+:root {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $body-bg;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+a, a:not([href]) {
+  font-size: 1.6rem;
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+.form-control,
+input,
+label {
+  font-size: 1.6rem;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+label {
+  margin: 0;
+  line-height: 1.5;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+.text-success {
+  color: $success;
+}
+
+.text-danger {
+  color: $danger;
+}
+
+.alert {
+  span {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 0.5;
+  }
+}
+
+.passwordNotSame{
+  border-color: $danger !important
+}
+.pointer{
+  cursor: pointer;
+}
+
+/*create account page css*/
+.logo {
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+  flex-basis: 100%;
+}
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  height: calc(100% - 40px);
+  flex-wrap: wrap;
+  form {
+    width: 375px;
+    margin: 0 auto;
+  }
+
+  .password-rules {
+    margin-top: .7rem;
+    li {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: $danger;
+    }
+    &.rules-list {
+      padding-left: 15px;
+      li {
+        list-style: disc;
+
+      }
+    }
+  }
+
+  .account-created {
+    width: 475px;
+    margin: 0 auto;
+    .success-icon {
+      width: 7rem;
+      height: 7rem;
+      display: inline-flex;
+      border-radius: 50%;
+      background-color: $success;
+      color: $white;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      i {
+        font-size: 3rem;
+      }
+    }
+    .btn {
+      margin: 0 1rem;
+    }
+  }
+
+  /*setup profile steps wrapper and style*/
+
+  &.profile-wrapper {
+    display: block;
+    height: 100%;
+    .logo {
+      padding-bottom: 3rem;
+    }
+    .profile-steps {
+      display: flex;
+      width: 500px;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 7rem;
+      counter-reset: steps;
+      position: relative;
+      li {
+        padding: 0;
+        position: relative;
+        display: block;
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: 1.5rem;
+        color: $gray-color;
+        &::before {
+          content: counter(steps);
+          counter-increment: steps;
+          background: transparent;
+          color: $gray-color;
+          border: 2px solid $gray-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+          text-align: center;
+          width: 4rem;
+          height: 4rem;
+          margin: 0 auto 1rem auto;
+          position: relative;
+          font-size: 1.5rem;
+          z-index: 2;
+        }
+
+        &:after {
+          width: 60%;
+          height: 2px;
+          content: "";
+          position: absolute;
+          background-color: $gray-color;
+          top: 2rem;
+          left: 71%;
+          z-index: -1;
+        }
+
+        &.active {
+          color: $primary-color;
+          &:before {
+            background-color: $primary-color;
+            color: $white;
+            border-color: $primary-color;
+          }
+        }
+
+        &.completed {
+          color: $text-color;
+          &:before {
+            font-family: "icomoon";
+            content: "\e901";
+            background-color: $success;
+            color: $white;
+            border-color: $success;
+          }
+          &:after {
+            background-color: $success;
+          }
+        }
+
+        &:last-of-type {
+          &:after {
+            // Hide last progress bar
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-upload {
+  width: 375px;
+  margin: 0 auto;
+.avatar-wrapper {
+  position: relative;
+  height: 170px;
+  width: 170px;
+  border: 1px dashed $gray-color;
+  border-width: 2px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  .upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    img {
+      width: 82%;
+    }
+  }
+  input {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+}
+
+.upload-image-text {
+  font-size: 1.2rem;
+  line-height: 1;
+  font-size: 1.4rem;
+    line-height: 1.5;
+}
+.picture-preview {
+  position: relative;
+  height: 170px;
+  width: 170px;
+  background-color: $gray-color;
+  border: 0;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  img {
+    width: 100%;
+  }
+}
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+}
+
+.not-found {
+  .notfound-404 {
+     text-align: center;
+      h1 {
+          font-size:10rem;
+          margin: 0px;
+          text-transform: uppercase;
+      }
+  }
+  h2 {
+      font-weight: 400;
+      text-transform: uppercase;
+      margin: 2rem 0;
+      text-align: center;
+  }
+}
+
+.email-exists +label+i{
+  display: none;
+}
+.email-exists + label+i+#emailTaken{
+  display: block ! important ;
+}
+#emailTaken{
+  display: none;
+}
+
+

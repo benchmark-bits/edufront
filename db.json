@@ -1,0 +1,69 @@
+{
+  "users": [],
+  "validationMessage": [
+    {
+      "id": 1,
+      "key": "create-account",
+      "messages": {
+        "email-required": {
+          "required": "Email Address is required."
+        },
+        "email-pattern": {
+          "pattern": "Please enter valid email address."
+        },
+        "password-required": {
+          "required": "Password is required."
+        },
+        "password-pattern": {
+          "minLength": "8 Characters Long",
+          "capital": "Contain one Capital",
+          "numerical": "Contain one Numeral"
+        },
+        "confirm-password-required": {
+          "required": "Confirm Password is required."
+        },
+        "password-mismatch": {
+          "mismatch": "Password and Confirm Password does not match."
+        },
+        "email-exists": {
+          "emailIdError": "Email Address already taken."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "key": "login",
+      "messages": {
+        "email-required": {
+          "required": "Email Address is required."
+        },
+        "email-pattern": {
+          "pattern": "Please enter valid email address."
+        },
+        "password-required": {
+          "required": "Password is required."
+        }
+      }
+    }
+  ],
+  "staticContent": [
+    {
+      "id": 1,
+      "key": "terms-of-service",
+      "title": "Terms of Services",
+      "content": "<p>Terms of Services Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p> <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p> <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>"
+    },
+    {
+      "id": 2,
+      "key": "privacy-policy",
+      "title": "Privacy Policy",
+      "content": "<p>Privacy Policy Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p> <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p> <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>"
+    },
+    {
+      "id": 3,
+      "key": "account-created",
+      "title": "Account Created!",
+      "content": "<p>You have taken the first step to something great!!<br/>You can either keep going and set up your profile now, or log out and come back to it later.</p>"
+    }
+  ]
+}

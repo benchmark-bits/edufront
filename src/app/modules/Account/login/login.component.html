@@ -1,0 +1,72 @@
+<!--server message-->
+<app-message [isAlert]="error?.isAlert" [type]="error?.type" [message]="error?.message"></app-message>
+<!--server message-->
+
+<div class="form-wrapper">
+  <div class="logo pb-0">
+    <img src="assets/img/logo.jpg" alt="logo">
+  </div>
+  <div>
+    <h1 class="text-center mb-3">Log In To Your Account</h1>
+    <p class="text-center pb-4 mb-5">New User ? <a href="javascript:void(0)"
+        [routerLink]="['/create-account']">Signup Now</a></p>
+    <!--LOGIN FORM-->
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+      <div class="form-group has-float-label">
+        <input class="form-control" type="text" id="username" placeholder="Email Address" formControlName="username">
+        <label for="username">Email Address</label>
+
+        <div
+          *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+          class="error-msg">
+          <span *ngIf="loginForm.controls['username'].errors.required">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['email-required'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+          <span *ngIf="loginForm.controls['username'].errors?.pattern">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['email-pattern'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+      <div class="form-group has-float-label field-with-icon position-relative">
+        <input class="form-control" [type]="hidePassword ? 'password' : 'text'"  id="password" placeholder="Password" formControlName="password">
+        <label for="password">Password</label>
+        <i (click)="hidePassword = !hidePassword" class="pointer"
+        [ngClass]="hidePassword ? 'icon-eye-off' : 'icon-eye'"></i>
+        <div
+          *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+          class="error-msg">
+          <span *ngIf="loginForm.controls['password'].errors.required">
+            <ul class="password-rules">
+              <li *ngFor="let rule of validationMessage['password-required'] | keyvalue">{{rule.value}}</li>
+            </ul>
+          </span>
+        </div>
+        <div
+          *ngIf="loginForm.controls['password'].errors?.minlength || loginForm.controls['password'].errors?.pattern"
+          class="error-msg">
+          {{validationMessage['password-pattern']}}
+        </div>
+      </div>
+
+      <div class="d-flex mb-5">
+        <button class="btn btn-lg btn-primary w-100" [disabled]="isSubmitting">Sign In</button>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center pt-4">
+        <div class="form-check custom-checkbox">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Remember Me
+          </label>
+        </div>
+        <a [routerLink]="['/forgot-password']">Forgot Password? </a>
+      </div>
+    </form>
+    <!--LOGIN FORM END-->
+  </div>
+
+</div>

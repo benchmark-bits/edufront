@@ -1,0 +1,49 @@
+<div class="form-wrapper profile-wrapper">
+  <div class="logo">
+    <img src="assets/img/logo.jpg" alt="logo">
+  </div>
+  <h1 class="text-center mb-5">Set Up Your Profile</h1>
+   <!--STEPS START-->
+   <ul class="profile-steps">
+    <li class="profile-steps-item completed">
+      Bio Details
+    </li>
+    <li class="profile-steps-item active">
+      Profile Picture
+    </li>
+    <li class="profile-steps-item">
+      Address
+    </li>
+    <li class="profile-steps-item">
+      Security
+     </li>
+  </ul>
+  <!--STEPS END-->
+  <div class="w-100 float-left mb-5">
+    <div class="profile-upload">
+      <!--PICTURE UPLOAD-->
+      <div class="avatar-wrapper">
+        <div class="upload-button">
+         <img alt="main.svg" src="assets/img/man.svg">
+        </div>
+        <input class="file-upload" type="file"/>
+      </div>
+      <p class="text-center upload-image-text">Drag & drop on click on the image<br> above to upload your image</p>
+        <!--PICTURE UPLOAD END-->
+
+        <!--PICTURE PREVIEW-->
+        <div class="picture-preview mb-4 d-none">
+          <img alt="avatar.png" src="assets/img/avatar.png">
+        </div>
+        <div class="actions mb-5 d-none">
+          <a>Delete</a>  <a>Confirm</a>
+        </div>
+        <!--PICTURE PREVIEW END-->
+
+      <div class="d-flex pt-5 justify-content-center">
+        <a class="btn btn-lg btn-primary w-100" [routerLink]="['/setup-profile/address']">Next</a>
+      </div>
+    </div>
+  </div>
+</div>
+

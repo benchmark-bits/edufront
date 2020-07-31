@@ -1,0 +1,84 @@
+.btn {
+  padding: 1.2rem 2rem;
+  border-radius: 5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  min-width: 170px;
+  max-width: 375px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  box-shadow: 0 4px 7px 2px rgba(196, 208, 222, 0.38);
+}
+
+.btn-secondary {
+  background-color:$light-gray;
+  border-color: $light-gray;
+  box-shadow: none;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.btn.active {
+  color: inherit;
+}
+
+/*CHECKBOX STYLE */
+
+.form-check {
+  &.custom-checkbox {
+    padding-left: 4.5rem;
+    .form-check-input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+    .form-check-label::before {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      top: -0.5rem;
+      left: 0;
+      display: inline-block;
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      border: 1px solid $gray-color;
+    }
+
+    .form-check-label::after {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      top: -0.5rem;
+      left: 0px;
+      font-size: 2rem;
+      background-color: $success;
+      border: 1px solid $success;
+      color: $white;
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      border: transparent;
+    }
+    input[type="checkbox"]:checked + label::after {
+      font-family: "icomoon";
+      content: "\e901";
+    }
+  }
+}

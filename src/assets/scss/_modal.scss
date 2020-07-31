@@ -1,0 +1,85 @@
+/* Custom modal style */
+
+/* modal animation */
+@keyframes modal-b-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    top: -6.25rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  animation: ease-in-out 0.3s modal-b-fade;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.custom-modal {
+  margin: 0rem auto;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  position: relative;
+  animation: ease-in-out 0.3s modal-fade;
+  transition: all 0.3s ease-in-out;
+  .custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid $gray-color;
+    h2 {
+      margin-top: 0;
+      color: $text-color;
+    }
+    .close {
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: .5;
+      text-decoration: none;
+      color: $text-color;
+      transition: all 200ms;
+    }
+  }
+  .custom-modal-content {
+    padding: 2rem;
+    max-height: 30%;
+    overflow: auto;
+  }
+.custom-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding:2rem;
+  border-top: 1px solid $gray-color;
+  .btn {
+    padding: .7rem 1rem;
+    font-size: 1.3rem;
+    min-width: 90px;
+  }
+}
+  @media screen and (min-width: 992px){
+   max-width: 800px;
+   margin: 7rem auto;
+  }
+}
+
+
