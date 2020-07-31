@@ -1,6 +1,6 @@
-Welcome to the edufront
+<h1>Welcome to the edufront</h1>
 
-Pre-requisites
+<h2>Pre-requisites</h2>
 <ul>
  <li>node.js - <a href="https://nodejs.org/en/download/" rel="nofollow">Download page</a> .</li>
  <li>npm - comes with node or download yarn - <a href="https://yarnpkg.com/lang/en/docs/install" rel="nofollow">Download page</a> .</li>
